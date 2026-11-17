@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A nine-day Catholic novena for relief from debt and financial hardship, through St. Joseph, St. Rita of Cascia and St. Jude Thaddeus.">
+<meta name="theme-color" content="#FFFDF9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1524" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://novena-relief.netlify.app/">
+<meta property="og:title" content="Novena for Relief from Debt">
+<meta property="og:description" content="Nine days of trust in God’s providence, through St. Joseph, St. Rita &amp; St. Jude.">
+<meta property="og:image" content="https://novena-relief.netlify.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Novena">
+<title>Novena for Relief from Debt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one prayer-book column; a "today" card, a nine-day strip, then the day's prayers in the order you pray them. */
+:root{
+  --paper:#FFFDF9;      /* page */
+  --sheet:#FFFFFF;      /* raised surfaces */
+  --ink:#2A2521;        /* text */
+  --muted:#675E57;      /* secondary text */
+  --wine:#6E1F2B;       /* spoken responses, headings */
+  --gold:#94702A;       /* labels, icons, rules of emphasis */
+  --rule:#E3D8C6;       /* hairlines */
+  --wash:#F6F0E6;       /* soft fills */
+  --cta:#6E1F2B; --on-cta:#FFFDF9;
+  --gold-text:#896725; --rule-strong:#9C8B70;
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --body:"EB Garamond",Garamond,Georgia,"Times New Roman",serif;
+  --scale:1;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]):not([data-mode="light"]){
+    --paper:#0E1524; --sheet:#162036; --ink:#ECE6DA; --muted:#A7B0C2;
+    --wine:#EBCF95; --gold:#C9A45A; --rule:#26324C; --wash:#1B2740; --cta:#C9A45A; --on-cta:#0E1524; --gold-text:#D0AD66; --rule-strong:#5E6E90; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]:not([data-mode="light"]),:root[data-mode="dark"]{
+  --paper:#0E1524; --sheet:#162036; --ink:#ECE6DA; --muted:#A7B0C2;
+    --wine:#EBCF95; --gold:#C9A45A; --rule:#26324C; --wash:#1B2740; --cta:#C9A45A; --on-cta:#0E1524; --gold-text:#D0AD66; --rule-strong:#5E6E90; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:calc(18px * var(--scale));line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,textarea{font:inherit;color:inherit}
+a{color:var(--wine)}
+svg.i{width:1em;height:1em;fill:currentColor;flex:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;gap:12px;height:52px}
+.bar .mark{color:var(--wine);font-size:22px;line-height:1}
+.bar .name{font-family:var(--display);font-weight:600;font-size:18px;color:var(--wine);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;height:44px;padding:0 12px;border:1px solid var(--rule);border-radius:999px;background:var(--sheet);color:var(--ink);cursor:pointer;font-size:15px}
+.iconbtn svg{font-size:19px;color:var(--gold)}
+.iconbtn:hover{border-color:var(--gold)}
+
+/* hero */
+.hero{padding:40px 0 12px;text-align:center}
+.cross{color:var(--wine);font-size:26px;line-height:1}
+.kicker{margin:10px 0 0;font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--gold);text-transform:uppercase}
+h1{font-family:var(--display);font-weight:700;color:var(--wine);font-size:clamp(34px,8vw,46px);line-height:1.05;margin:10px 0 8px;text-wrap:balance}
+.sub{font-family:var(--display);font-style:italic;font-size:19px;color:var(--muted);margin:0 auto;max-width:30ch;text-wrap:balance}
+.epi{margin:18px auto 0;font-style:italic;font-size:17px;max-width:34ch}
+.cite{display:block;font-style:normal;font-size:11.5px;letter-spacing:.12em;color:var(--muted);margin-top:4px;text-transform:uppercase}
+
+/* today card */
+.today{margin:28px 0 8px;background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--gold);border-radius:14px;padding:20px 20px 18px}
+.today-top{display:flex;align-items:flex-start;gap:16px}
+.daynum{font-family:var(--display);font-weight:700;color:var(--wine);font-size:60px;line-height:.85;min-width:56px;text-align:center}
+.daynum small{display:block;white-space:nowrap;font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.14em;color:var(--gold);margin-top:6px}
+.today h2{font-family:var(--display);font-weight:700;font-size:25px;line-height:1.15;margin:2px 0 4px;color:var(--ink);text-wrap:balance}
+.today .status{margin:0;color:var(--muted);font-size:16px}
+.track{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin:18px 0 4px;padding:0;list-style:none}
+.track button{width:100%;aspect-ratio:1;max-width:44px;margin:0 auto;display:grid;place-items:center;border-radius:50%;border:1.5px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;font-size:14px;font-weight:600;padding:0;font-variant-numeric:tabular-nums}
+.track button.done{background:var(--gold);border-color:var(--gold);color:var(--sheet)}
+.track button.sel{border-color:var(--wine);box-shadow:0 0 0 2px var(--wine) inset;color:var(--wine)}
+.track button.done.sel{color:var(--sheet);box-shadow:0 0 0 2px var(--sheet) inset,0 0 0 2px var(--wine)}
+.startrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);font-size:15px;color:var(--muted)}
+.startrow input{border:1px solid var(--rule);border-radius:8px;background:var(--paper);padding:6px 10px;font-size:15px}
+.startrow .link{background:none;border:0;color:var(--wine);text-decoration:underline;cursor:pointer;padding:4px 0}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;border:0;border-radius:12px;background:var(--cta);color:var(--on-cta);font-size:18px;font-weight:600;padding:14px 18px;cursor:pointer}
+.cta svg{font-size:22px}
+
+/* sections */
+section{padding:30px 0 8px}
+.h2{display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-weight:700;color:var(--wine);font-size:27px;margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--gold)}
+.h2 .n{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--gold);margin-left:auto}
+.flow{font-size:14.5px;color:var(--muted);margin:-6px 0 18px}
+
+/* prayer steps */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.step{position:relative;padding:18px 0 20px 40px;border-bottom:1px solid var(--rule)}
+.step:last-child{border-bottom:0}
+.step .num{position:absolute;left:0;top:19px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.label{font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--gold);text-transform:uppercase;margin:2px 0 8px;display:flex;align-items:center;gap:8px}
+.label svg{font-size:17px}
+.read{font-size:calc(19px * var(--scale));line-height:1.6}
+.read p{margin:0 0 .6em}
+.read p:last-child{margin-bottom:0}
+.resp{color:var(--wine);font-style:italic}
+.rubric{color:var(--wine);font-style:italic;font-size:calc(17px * var(--scale))}
+.verse{font-style:italic;font-size:calc(20px * var(--scale));line-height:1.5;margin:0}
+.ref{font-size:12.5px;letter-spacing:.12em;color:var(--gold);margin:6px 0 12px}
+.refl{font-size:calc(18px * var(--scale));margin:0}
+.daytitle{font-family:var(--display);font-weight:700;color:var(--wine);font-size:calc(27px * var(--scale));line-height:1.15;margin:0 0 10px;text-wrap:balance}
+.dayicon{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--gold)}
+.dayicon svg{font-size:20px}
+.pray .read{font-size:calc(21px * var(--scale));line-height:1.6}
+.litany p{margin:0 0 .25em}
+.sub-h{font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--gold);text-transform:uppercase;margin:16px 0 6px}
+
+details.prayer{border:1px solid var(--rule);border-radius:10px;background:var(--sheet);margin:8px 0}
+details.prayer summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 14px;font-weight:600;font-size:calc(18px * var(--scale))}
+details.prayer summary::-webkit-details-marker{display:none}
+details.prayer summary svg{margin-left:auto;color:var(--gold);transition:transform .2s}
+details.prayer[open] summary svg{transform:rotate(180deg)}
+details.prayer .read{padding:0 14px 14px;font-size:calc(18px * var(--scale))}
+.hint{font-size:14px;color:var(--muted);margin:4px 0 0}
+
+.markdone{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin:22px 0 0;border:1.5px solid var(--gold);border-radius:12px;background:transparent;color:var(--ink);font-size:18px;font-weight:600;padding:13px 16px;cursor:pointer}
+.markdone svg{color:var(--gold);font-size:22px}
+.markdone.is-done{background:var(--gold);color:var(--sheet)}
+.markdone.is-done svg{color:var(--sheet)}
+.daynav{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.daynav button{flex:1;border:1px solid var(--rule);background:var(--sheet);border-radius:10px;padding:10px;cursor:pointer;font-size:15.5px;color:var(--ink)}
+.daynav button:disabled{opacity:.4;cursor:default}
+
+/* intention */
+.intent{background:var(--wash);border-radius:12px;padding:14px 16px;margin-top:6px}
+.intent label{display:block;font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.intent textarea{width:100%;min-height:76px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);padding:10px 12px;font-size:17px;line-height:1.5;resize:vertical}
+.intent .hint{margin-top:6px}
+
+/* guide sections */
+ol.how{margin:0;padding-left:1.3em}
+ol.how li{margin:0 0 6px;padding-left:4px}
+ol.how li::marker{color:var(--gold);font-weight:600}
+.saints{display:grid;gap:12px}
+.saint{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:14px 16px}
+.saint h3{font-family:var(--display);font-weight:700;color:var(--wine);font-size:22px;margin:0}
+.saint .meta{font-size:13px;color:var(--muted);margin:2px 0 0}
+.saint .pat{font-style:italic;color:var(--gold);margin:2px 0 6px;font-size:16px}
+.saint p{margin:0;font-size:16.5px}
+.tips{display:grid;gap:14px}
+.tip h3{font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--gold);text-transform:uppercase;margin:0 0 4px}
+.tip p{margin:0;font-size:17px}
+.close{text-align:center;padding:36px 0 18px}
+.close blockquote{margin:0;font-family:var(--display);font-style:italic;color:var(--wine);font-size:23px;line-height:1.35;text-wrap:balance}
+.note{font-size:13px;font-style:italic;color:var(--muted);margin:14px 0 0}
+footer{padding:10px 0 44px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* text size popover */
+.sizer{display:none;position:absolute;right:20px;top:56px;background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:8px;gap:6px;box-shadow:0 8px 24px rgb(0 0 0 / .12)}
+.sizer.open{display:flex}
+.sizer button{min-width:48px;height:40px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);cursor:pointer;font-family:var(--display);font-weight:700;color:var(--wine)}
+.sizer button[aria-pressed="true"]{border-color:var(--wine);box-shadow:0 0 0 1px var(--wine) inset}
+.bar{position:sticky}
+.barwrap{position:relative}
+
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-size:15px;white-space:nowrap;max-width:calc(100vw - 32px);opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.show{opacity:1}
+
+@media (max-width:420px){
+  body{font-size:calc(17px * var(--scale))}
+  .wrap{padding:0 16px}
+  .step{padding-left:0}
+  .step .num{position:static;display:inline-grid;flex:none}
+  .daynum{font-size:52px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.bar,.today .cta,.markdone,.daynav,.intent,.startrow{display:none}}
+
+/* review fixes: readable gold, 3:1 control borders, scalable text, 44px targets */
+.kicker,.label,.ref,.sub-h,.intent label,.tip h3,.saint .pat,.daynum small,.dayicon,.h2 .n{color:var(--gold-text)}
+.label svg,.dayicon svg{color:var(--gold)}
+.status{font-size:calc(16px * var(--scale))}
+.label,.ref,.sub-h,.intent label,.tip h3{font-size:calc(12.5px * var(--scale))}
+.tip p{font-size:calc(17px * var(--scale))}
+.saint p{font-size:calc(16.5px * var(--scale))}
+.saint .meta{font-size:calc(13px * var(--scale))}
+.hint,.flow{font-size:calc(14.5px * var(--scale))}
+.today h2{font-size:calc(25px * var(--scale))}
+.h2{font-size:calc(27px * var(--scale))}
+.step .num{letter-spacing:0}
+.name .short{display:none}
+.track{gap:4px}
+.track button{aspect-ratio:auto;height:44px;max-width:none;border-radius:12px;border-color:var(--rule-strong);font-size:15px}
+.startrow input{font-size:16px;min-height:44px;border-color:var(--rule-strong)}
+.startrow .link{min-height:44px;padding:0 6px;font-size:16px}
+#resetAll{margin-left:auto}
+.intent textarea{border-color:var(--rule-strong)}
+details.prayer{border-color:var(--rule-strong)}
+#prayer{scroll-margin-top:124px}
+.home{display:flex;align-items:center;gap:12px;flex:1;min-width:0;text-decoration:none;min-height:44px}
+.days{position:sticky;top:53px;z-index:4;background:var(--paper);border-bottom:1px solid var(--rule)}
+.days .track{margin:0;padding:6px 0 7px}
+.dcap{display:none;margin:0;padding-top:7px;font-size:13px;letter-spacing:.06em;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.dcap b{color:var(--gold-text);font-weight:600;letter-spacing:.14em}
+/* phones: the nine days become a bottom tab bar, in thumb reach */
+@media (max-width:600px){
+  .days{position:fixed;top:auto;bottom:0;left:0;right:0;border-bottom:0;border-top:1px solid var(--rule);box-shadow:0 -6px 18px rgb(0 0 0 / .06);padding-bottom:env(safe-area-inset-bottom)}
+  .dcap{display:block}
+  .days .track{padding:5px 0 8px}
+  body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  #prayer{scroll-margin-top:64px}
+  .toast{bottom:calc(108px + env(safe-area-inset-bottom))}
+}
+.track button{position:relative}
+.track button.today::after{content:"";position:absolute;left:50%;bottom:5px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:currentColor}
+.track button.today:not(.sel):not(.done){color:var(--wine);border-color:var(--wine)}
+.today{margin-top:24px}
+.wake{margin:-4px 0 14px;font-size:15px}
+.wake[aria-pressed="true"]{border-color:var(--gold);background:var(--wash)}
+@media (max-width:600px){.bar .name{display:none}.bar .mark{font-size:26px}#sizeBtn>span,#themeLabel{display:none}.bar .iconbtn{width:44px;min-width:44px;padding:0}.bar .iconbtn svg{font-size:21px}}
+@media (max-width:420px){.today{padding:18px 14px}.name .long{display:none}.name .short{display:inline}}
+
+/* step headings: readable wayfinding while praying aloud */
+.step>.label{font-family:var(--display);font-weight:700;font-size:calc(24px * var(--scale));letter-spacing:0;text-transform:none;color:var(--ink);line-height:1.15;margin:0 0 12px;gap:12px}
+.step .num{width:32px;height:32px;font-family:var(--body);font-size:15px;top:15px}
+.step{padding-left:46px}
+@media (max-width:420px){.step{padding-left:0}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-hands-praying" viewBox="0 0 256 256"><path d="M235.32,180l-36.24-36.25L162.62,23.46A21.76,21.76,0,0,0,128,12.93,21.76,21.76,0,0,0,93.38,23.46L56.92,143.76,20.68,180a16,16,0,0,0,0,22.62l32.69,32.69a16,16,0,0,0,22.63,0L124.28,187a40.68,40.68,0,0,0,3.72-4.29,40.68,40.68,0,0,0,3.72,4.29L180,235.32a16,16,0,0,0,22.63,0l32.69-32.69A16,16,0,0,0,235.32,180ZM64.68,224,32,191.32l12.69-12.69,32.69,32.69ZM120,158.75a23.85,23.85,0,0,1-7,17L88.68,200,56,167.32l13.65-13.66a8,8,0,0,0,2-3.34l37-122.22A5.78,5.78,0,0,1,120,29.78Zm23,17a23.85,23.85,0,0,1-7-17v-129a5.78,5.78,0,0,1,11.31-1.68l37,122.22a8,8,0,0,0,2,3.34l14.49,14.49-33.4,32ZM191.32,224l-12.56-12.57,33.39-32L224,191.32Z"/></symbol><symbol id="i-sun-horizon" viewBox="0 0 256 256"><path d="M240,152H199.55a73.54,73.54,0,0,0,.45-8,72,72,0,0,0-144,0,73.54,73.54,0,0,0,.45,8H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM72,144a56,56,0,1,1,111.41,8H72.59A56.13,56.13,0,0,1,72,144Zm144,56a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16H208A8,8,0,0,1,216,200ZM72.84,43.58a8,8,0,0,1,14.32-7.16l8,16a8,8,0,0,1-14.32,7.16Zm-56,48.84a8,8,0,0,1,10.74-3.57l16,8a8,8,0,0,1-7.16,14.31l-16-8A8,8,0,0,1,16.84,92.42Zm192,15.16a8,8,0,0,1,3.58-10.73l16-8a8,8,0,1,1,7.16,14.31l-16,8a8,8,0,0,1-10.74-3.58Zm-48-55.16,8-16a8,8,0,0,1,14.32,7.16l-8,16a8,8,0,1,1-14.32-7.16Z"/></symbol><symbol id="i-hammer" viewBox="0 0 256 256"><path d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"/></symbol><symbol id="i-scales" viewBox="0 0 256 256"><path d="M239.43,133l-32-80h0a8,8,0,0,0-9.16-4.84L136,62V40a8,8,0,0,0-16,0V65.58L54.26,80.19A8,8,0,0,0,48.57,85h0v.06L16.57,165a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32a7.92,7.92,0,0,0-.57-3L66.92,93.77,120,82V208H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16H136V78.42L187,67.1,160.57,133a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32A7.92,7.92,0,0,0,239.43,133ZM56,184c-7.53,0-22.76-3.61-23.93-14.64L56,109.54l23.93,59.82C78.76,180.39,63.53,184,56,184Zm144-32c-7.53,0-22.76-3.61-23.93-14.64L200,77.54l23.93,59.82C222.76,148.39,207.53,152,200,152Z"/></symbol><symbol id="i-hourglass-medium" viewBox="0 0 256 256"><path d="M200,75.64V40a16,16,0,0,0-16-16H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64ZM72,40H184V75.64L178.23,80H77.33L72,76Zm56,78L98.67,96h58.4Zm56,98H72V180l48-36v24a8,8,0,0,0,16,0V144.08l48,36.28Z"/></symbol><symbol id="i-house-line" viewBox="0 0 256 256"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-hand-heart" viewBox="0 0 256 256"><path d="M230.33,141.06a24.34,24.34,0,0,0-18.61-4.77C230.5,117.33,240,98.48,240,80c0-26.47-21.29-48-47.46-48A47.58,47.58,0,0,0,156,48.75,47.58,47.58,0,0,0,119.46,32C93.29,32,72,53.53,72,80c0,11,3.24,21.69,10.06,33a31.87,31.87,0,0,0-14.75,8.4L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM119.46,48A31.15,31.15,0,0,1,148.6,67a8,8,0,0,0,14.8,0,31.15,31.15,0,0,1,29.14-19C209.59,48,224,62.65,224,80c0,19.51-15.79,41.58-45.66,63.9l-11.09,2.55A28,28,0,0,0,140,112H100.68C92.05,100.36,88,90.12,88,80,88,62.65,102.41,48,119.46,48ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9Z"/></symbol><symbol id="i-cross" viewBox="0 0 256 256"><path d="M200,72H160V32a16,16,0,0,0-16-16H112A16,16,0,0,0,96,32V72H56A16,16,0,0,0,40,88v32a16,16,0,0,0,16,16H96v88a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V136h40a16,16,0,0,0,16-16V88A16,16,0,0,0,200,72Zm0,48H152a8,8,0,0,0-8,8v96H112V128a8,8,0,0,0-8-8H56V88h48a8,8,0,0,0,8-8V32h32V80a8,8,0,0,0,8,8h48Z"/></symbol><symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol><symbol id="i-book-open" viewBox="0 0 256 256"><path d="M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"/></symbol><symbol id="i-text-aa" viewBox="0 0 256 256"><path d="M87.24,52.59a8,8,0,0,0-14.48,0l-64,136a8,8,0,1,0,14.48,6.81L39.9,160h80.2l16.66,35.4a8,8,0,1,0,14.48-6.81ZM47.43,144,80,74.79,112.57,144ZM200,96c-12.76,0-22.73,3.47-29.63,10.32a8,8,0,0,0,11.26,11.36c3.8-3.77,10-5.68,18.37-5.68,13.23,0,24,9,24,20v3.22A42.76,42.76,0,0,0,200,128c-22.06,0-40,16.15-40,36s17.94,36,40,36a42.73,42.73,0,0,0,24-7.25,8,8,0,0,0,16-.75V132C240,112.15,222.06,96,200,96Zm0,88c-13.23,0-24-9-24-20s10.77-20,24-20,24,9,24,20S213.23,184,200,184Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-users" viewBox="0 0 256 256"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></symbol><symbol id="i-heart" viewBox="0 0 256 256"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol></svg>
+<header class="bar">
+  <div class="wrap barwrap">
+    <a class="home" href="#top" id="homeLink" aria-label="Back to top"><svg class="i mark" aria-hidden="true"><use href="#i-cross"/></svg><span class="name"><span class="long">Novena for Relief from Debt</span><span class="short">Debt Novena</span></span></a>
+    <button class="iconbtn" id="sizeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="sizer" aria-label="Text size" title="Text size"><svg class="i"><use href="#i-text-aa"/></svg><span>Text</span></button>
+    <button class="iconbtn" id="themeBtn" title="Switch light or dark"><svg class="i" id="themeIcon"><use href="#i-moon"/></svg><span id="themeLabel">Dark</span></button>
+    <div class="sizer" id="sizer" role="group" aria-label="Text size">
+      <button type="button" data-scale="1" aria-label="Normal text" style="font-size:15px">A</button>
+      <button type="button" data-scale="1.15" aria-label="Larger text" style="font-size:19px">A</button>
+      <button type="button" data-scale="1.35" aria-label="Largest text" style="font-size:24px">A</button>
+    </div>
+  </div>
+</header>
+<nav class="days" aria-label="The nine days">
+  <div class="wrap"><p class="dcap" id="dCap" aria-hidden="true"></p><ol class="track" id="track"></ol></div>
+</nav>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="cross" aria-hidden="true">✝</div>
+    <p class="kicker">Nine days of trust in God’s providence</p>
+    <h1>Novena for Relief from Debt and Financial Hardship</h1>
+    <p class="sub">through the intercession of St. Joseph, St. Rita of Cascia &amp; St. Jude Thaddeus</p>
+    <p class="epi">“Casting all your care upon him, for he hath care of you.”<span class="cite">1 Peter 5:7 · Douay-Rheims</span></p>
+  </div>
+
+  <div class="today" id="today">
+    <div class="today-top">
+      <div class="daynum" id="tNum">1<small>OF 9</small></div>
+      <div>
+        <h2 id="tTitle">Surrendering Financial Fear</h2>
+        <p class="status" id="tStatus" aria-live="polite">Begin on any day. Each day takes about 10 minutes.</p>
+      </div>
+    </div>
+    <button class="cta" id="beginBtn" type="button"><svg class="i"><use href="#i-hands-praying"/></svg><span id="beginLabel">Pray Day 1</span></button>
+    <div class="startrow">
+      <label for="startDate">Started on</label>
+      <input type="date" id="startDate">
+      <button class="link" type="button" id="startToday">Start today</button>
+      <button class="link" type="button" id="resetAll">Reset</button>
+    </div>
+  </div>
+
+  <section id="prayer" aria-labelledby="prayHead">
+    <h2 class="h2" id="prayHead"><span id="prayHeadText">Pray Day 1</span><span class="n" id="prayHeadN">DAY 1 OF 9</span></h2>
+    <button class="iconbtn wake" id="wakeBtn" type="button" hidden aria-pressed="false"><svg class="i"><use href="#i-sun"/></svg><span id="wakeLabel">Keep screen on while praying</span></button>
+    <p class="flow">Opening Prayer › Scripture &amp; Reflection › Prayer › Closing Prayer &amp; Memorare › Our Father · Hail Mary · Glory Be</p>
+
+    <ol class="steps">
+      <li class="step">
+        <p class="label"><span class="num">1</span>Opening Prayer</p>
+        <div class="read">
+          <p class="rubric">Pause for a moment of silence before God, then make the Sign of the Cross.</p>
+          <p>In the name of the Father, and of the Son, and of the Holy Spirit. <span class="resp">Amen.</span></p>
+          <p><em>Come, Holy Spirit, fill the hearts of Your faithful and kindle in them the fire of Your love.</em></p>
+          <p>Heavenly Father, You know every financial burden I carry and every debt that weighs on my mind. I place my trust in Your loving providence rather than in my own fear. Today I ask St. Joseph, faithful guardian and provider; St. Rita of Cascia, advocate of the impossible; and St. Jude Thaddeus, patron of desperate cases, to join their prayers with mine before Your throne, through Christ our Lord. <span class="resp">Amen.</span></p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="label"><span class="num">2</span>Scripture &amp; Reflection</p>
+        <div class="dayicon" id="dIconLabel"><svg class="i"><use href="#i-hands-praying"/></svg><span>DAY 1</span></div>
+        <h3 class="daytitle" id="dTitle">Surrendering Financial Fear</h3>
+        <p class="verse" id="dVerse"></p>
+        <p class="ref" id="dRef"></p>
+        <p class="refl" id="dRefl"></p>
+      </li>
+
+      <li class="step pray">
+        <p class="label"><span class="num">3</span>Pray</p>
+        <div class="read">
+          <p id="dPrayer"></p>
+          <p class="rubric">(Name your intention.)</p>
+        </div>
+        <div class="intent">
+          <label for="intention">Our intention</label>
+          <textarea id="intention" placeholder="Write the intention your family is praying for."></textarea>
+          <p class="hint" id="storeHint">Saved only on this phone. Nobody else can see it.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="label"><span class="num">4</span>Closing Prayer</p>
+        <div class="read litany">
+          <p>Mary, Help of Christians, <span class="resp">pray for us.</span></p>
+          <p>St. Joseph, <span class="resp">pray for us.</span></p>
+          <p>St. Rita of Cascia, <span class="resp">pray for us.</span></p>
+          <p>St. Jude Thaddeus, <span class="resp">pray for us.</span></p>
+        </div>
+        <div class="read" style="margin-top:.6em">
+          <p>Lord Jesus, guide my steps, bless my honest work, grant me wisdom in stewardship, and lead me to freedom from debt according to Your holy will. <span class="resp">Amen.</span></p>
+        </div>
+        <p class="sub-h">Memorare to St. Joseph</p>
+        <div class="read">
+          <p>Remember, O most chaste spouse of the Virgin Mary, that never was it known that anyone who implored your help and sought your intercession was left unassisted. Full of confidence in your power, I fly unto you and beg your protection. Despise not, O Guardian of the Redeemer, my humble supplication, but in your bounty, hear and answer me. <span class="resp">Amen.</span></p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="label"><span class="num">5</span>Pray together</p>
+        <details class="prayer" open><summary>Our Father <svg class="i"><use href="#i-caret-down"/></svg></summary>
+          <div class="read"><p>Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. <span class="resp">Amen.</span></p></div>
+        </details>
+        <details class="prayer" open><summary>Hail Mary <svg class="i"><use href="#i-caret-down"/></svg></summary>
+          <div class="read"><p>Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. <span class="resp">Amen.</span></p></div>
+        </details>
+        <details class="prayer" open><summary>Glory Be <svg class="i"><use href="#i-caret-down"/></svg></summary>
+          <div class="read"><p>Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and ever shall be, world without end. <span class="resp">Amen.</span></p></div>
+        </details>
+        <p class="rubric" style="margin-top:12px">Close with the Sign of the Cross.</p>
+        <button class="markdone" id="markBtn" type="button"><svg class="i"><use href="#i-check"/></svg><span id="markLabel">Mark Day 1 as prayed</span></button>
+        <div class="daynav">
+          <button type="button" id="prevBtn">‹ Day 0</button>
+          <button type="button" id="nextBtn">Day 2 ›</button>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="howHead">
+    <h2 class="h2" id="howHead">How to Pray This Novena</h2>
+    <ol class="how">
+      <li>Pause for a moment of silence before God.</li>
+      <li>Pray the <strong>Opening Prayer</strong>, beginning with the Sign of the Cross.</li>
+      <li>Read the day’s <strong>Scripture</strong> and reflection, then pray the day’s <strong>prayer</strong>, naming your intention.</li>
+      <li>Pray the <strong>Closing Prayer</strong> and the <strong>Memorare</strong> to St. Joseph.</li>
+      <li>End with one Our Father, one Hail Mary and one Glory Be, and the Sign of the Cross.</li>
+    </ol>
+    <div class="tips" style="margin-top:18px">
+      <div class="tip"><h3>As a family</h3><p>One person leads each part, saying “we/our” for “I/my”; all respond <span class="resp">pray for us</span> and <span class="resp">Amen</span>, and say the closing prayers together.</p></div>
+      <div class="tip"><h3>Alongside prayer</h3><p>If you can, go to Confession and attend Mass during these nine days, and pair prayer with prudent action: an honest budget, a talk with creditors, wise counsel (Day&nbsp;4).</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="saintsHead">
+    <h2 class="h2" id="saintsHead">The Three Intercessors</h2>
+    <div class="saints">
+      <article class="saint"><h3>St. Joseph</h3><p class="meta">1st century · Feasts · Mar 19 &amp; May 1</p><p class="pat">Patron of workers &amp; families</p><p>Carpenter of Nazareth and foster-father of Jesus, who provided for the Holy Family by honest labour. Invoked for steady work and trust in God’s provision.</p></article>
+      <article class="saint"><h3>St. Rita of Cascia</h3><p class="meta">1381–1457 · Feast · May 22</p><p class="pat">Patron of impossible causes</p><p>Wife, mother, widow and Augustinian nun who bore long family trials with patience and forgiveness, and became a peacemaker in her town.</p></article>
+      <article class="saint"><h3>St. Jude Thaddeus</h3><p class="meta">1st century · Feast · Oct 28 (with St. Simon)</p><p class="pat">Patron of desperate cases</p><p>Apostle and martyr, traditionally linked to the Letter of Jude. Long invoked by the faithful when all seems hopeless.</p></article>
+    </div>
+  </section>
+
+  <div class="close">
+    <div class="cross" aria-hidden="true">✝</div>
+    <blockquote>“Seek ye therefore first the kingdom of God, and his justice, and all these things shall be added unto you.”</blockquote>
+    <span class="cite">Matthew 6:33 · Douay-Rheims</span>
+    <p class="note">Quotations from the Douay-Rheims Bible; references follow the numbering of modern Catholic Bibles.</p>
+  </div>
+</main>
+<footer id="storeFoot">Your progress, start date and intention are kept only on this device.</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var DAYS = [
+ {
+  "title": "Surrendering Financial Fear",
+  "verse": "“For your Father knoweth that you have need of all these things.”",
+  "ref": "MATTHEW 6:32",
+  "refl": "When St. Joseph led Mary and Jesus into Egypt on short notice, he trusted God one step at a time. Tomorrow’s worries are not ours to carry alone.",
+  "prayer": "Heavenly Father, financial stress and unpaid debts often steal my peace. Through the intercession of St. Joseph, St. Rita and St. Jude, help me release my anxiety into Your hands and face my situation with calm faith."
+ },
+ {
+  "title": "Hope When Options Run Out",
+  "verse": "“Because no word shall be impossible with God.”",
+  "ref": "LUKE 1:37",
+  "refl": "Mary believed when nothing seemed possible. St. Rita and St. Jude join their prayers to ours, and their lives remind us that God’s mercy is larger than our math.",
+  "prayer": "Lord, when my debts look too heavy and the numbers do not add up, renew my hope in Your power to open unseen doors. With St. Rita, St. Jude and St. Joseph praying beside me, make a way forward and guard my home from despair."
+ },
+ {
+  "title": "Blessing on Daily Work",
+  "verse": "“And let the brightness of the Lord our God be upon us: and direct thou the works of our hands over us.”",
+  "ref": "PSALM 90:17",
+  "refl": "In the workshop at Nazareth, St. Joseph made ordinary work holy. Honest work is one of the ways God answers our prayers for provision.",
+  "prayer": "Father, bless the work of my hands and bring steady, honest income into my life. Through St. Joseph, St. Rita and St. Jude, open doors to fair work and opportunities that let me pay what I owe with integrity."
+ },
+ {
+  "title": "Wisdom in Stewardship",
+  "verse": "“The thoughts of the industrious always bring forth abundance.”",
+  "ref": "PROVERBS 21:5",
+  "refl": "Faith does not avoid budgets or hard numbers. Prayer and prudence walk together, and steady planning brings stability.",
+  "prayer": "God of wisdom, give me clear eyes to face every debt honestly, and discipline in how I spend, save and plan. Through St. Joseph, St. Rita and St. Jude, help me recognise wise counsel and take practical steps toward freedom."
+ },
+ {
+  "title": "Patience in Waiting",
+  "verse": "“Rejoicing in hope. Patient in tribulation. Instant in prayer.”",
+  "ref": "ROMANS 12:12",
+  "refl": "Getting out of debt rarely happens overnight. St. Rita waited in prayer for years without letting bitterness take root.",
+  "prayer": "Lord, when progress feels slow and I grow tired of waiting for relief, strengthen my perseverance. With St. Rita, St. Joseph and St. Jude interceding for me, guard my heart and keep me faithful one day at a time."
+ },
+ {
+  "title": "Peace for the Family",
+  "verse": "“And let the peace of Christ rejoice in your hearts, wherein also you are called in one body: and be ye thankful.”",
+  "ref": "COLOSSIANS 3:15",
+  "refl": "Money strain often spills into tension at home. St. Joseph guarded the peace of the Holy Family, and St. Rita was a peacemaker.",
+  "prayer": "Loving Father, protect my family from the strain of money worries. Through St. Joseph, St. Rita and St. Jude, fill our home with patience, mutual support and the peace of Christ through every trial."
+ },
+ {
+  "title": "Pressing Bills & Deadlines",
+  "verse": "“And may my God supply all your want, according to his riches in glory in Christ Jesus.”",
+  "ref": "PHILIPPIANS 4:19",
+  "refl": "St. Paul wrote these words from hardship. When bills press close, St. Jude is a faithful friend who brings our urgent needs before Jesus.",
+  "prayer": "Lord Jesus, You know the exact obligations and urgent bills pressing on me right now. Through St. Jude, St. Joseph and St. Rita, provide timely relief, fair arrangements and the resources to meet my commitments in peace."
+ },
+ {
+  "title": "A Free & Generous Heart",
+  "verse": "“And God is able to make all grace abound in you.”",
+  "ref": "2 CORINTHIANS 9:8",
+  "refl": "Money is a tool for stewardship, never an idol. Freedom from debt frees us to honour our obligations and to give.",
+  "prayer": "Heavenly Father, purify my desires, so that as You lift this burden my heart stays humble and free from greed. With St. Joseph, St. Rita and St. Jude praying for me, teach me to be a faithful and charitable steward."
+ },
+ {
+  "title": "Gratitude & Complete Trust in God’s Will",
+  "verse": "“In all things give thanks; for this is the will of God in Christ Jesus concerning you all.”",
+  "ref": "1 THESSALONIANS 5:18",
+  "refl": "A novena is a school of trust. Even if the answer unfolds slowly, we end in gratitude, because God hears every prayer.",
+  "prayer": "Lord, on this ninth day I thank You for Your faithfulness and for every grace, seen and unseen, that You will provide. Thank you, St. Joseph, St. Rita and St. Jude, for carrying my intentions before Jesus. I surrender my finances, my work and my future to Your loving will."
+ }
+];
+  var ICONS = ["hands-praying","sun-horizon","hammer","scales","hourglass-medium","house-line","calendar-check","hand-heart","cross"];
+  var KEY = "novena-debt-v1", canStore = true;
+  function load(){ try{ var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : {}; }catch(e){ canStore = false; return {}; } }
+  function save(s){ if (!canStore) return; try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){ canStore = false; noteStore(); } }
+  var state = load(); if (!state || typeof state !== "object") state = {};
+  state.done = Array.isArray(state.done) ? state.done : [];
+  var $ = function(id){ return document.getElementById(id); };
+  var root = document.documentElement;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function noteStore(){
+    if (canStore) return;
+    $("storeHint").textContent = "This page cannot save on this phone, so the intention clears when you close it.";
+    $("storeFoot").textContent = "This page cannot save here, so progress resets when you close it.";
+  }
+  noteStore();
+
+  /* theme: follow the phone (or the host page) until someone picks one */
+  function isDark(){ try{ return getComputedStyle(root).colorScheme.indexOf("dark") >= 0; }catch(e){ return false; } }
+  function paintTheme(){
+    if (state.mode) root.setAttribute("data-mode", state.mode); else root.removeAttribute("data-mode");
+    var d = isDark();
+    $("themeIcon").firstElementChild.setAttribute("href", d ? "#i-sun" : "#i-moon");
+    $("themeLabel").textContent = d ? "Light" : "Dark";
+    $("themeBtn").setAttribute("aria-label", d ? "Switch to light mode" : "Switch to dark mode");
+  }
+  $("themeBtn").addEventListener("click", function(){ state.mode = isDark() ? "light" : "dark"; save(state); paintTheme(); });
+  if (window.matchMedia){ var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) mq.addEventListener("change", paintTheme); }
+  try{ new MutationObserver(paintTheme).observe(root, {attributes:true, attributeFilter:["data-theme"]}); }catch(e){}
+
+  /* text size */
+  var SCALES = [1, 1.15, 1.35], sizeBtns = [].slice.call(document.querySelectorAll("#sizer button"));
+  function paintScale(){
+    var s = SCALES.indexOf(state.scale) >= 0 ? state.scale : 1;
+    root.style.setProperty("--scale", s);
+    sizeBtns.forEach(function(b){ b.setAttribute("aria-pressed", String(+b.dataset.scale === s)); });
+  }
+  function closeSizer(){ $("sizer").classList.remove("open"); $("sizeBtn").setAttribute("aria-expanded", "false"); }
+  $("sizeBtn").addEventListener("click", function(e){ e.stopPropagation(); var o = $("sizer").classList.toggle("open"); $("sizeBtn").setAttribute("aria-expanded", String(o)); });
+  sizeBtns.forEach(function(b){ b.addEventListener("click", function(e){ e.stopPropagation(); state.scale = +b.dataset.scale; save(state); paintScale(); }); });
+  document.addEventListener("click", closeSizer);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && $("sizer").classList.contains("open")){ closeSizer(); $("sizeBtn").focus(); } });
+
+  /* which day */
+  function todayISO(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0,10); }
+  function dayFromStart(){
+    if (!state.start) return null;
+    var a = new Date(state.start + "T00:00:00"), b = new Date(todayISO() + "T00:00:00");
+    return Math.round((b - a) / 86400000) + 1;
+  }
+  function isDone(i){ return state.done.indexOf(i) >= 0; }
+  function firstOpen(){ for (var i = 1; i <= 9; i++) if (!isDone(i)) return i; return 9; }
+  function suggested(){ var n = dayFromStart(); if (n === null || n > 9) return firstOpen(); return Math.max(n, 1); }
+  function fmt(iso){ try{ return new Date(iso + "T00:00:00").toLocaleDateString(undefined, {weekday:"short", month:"short", day:"numeric"}); }catch(e){ return iso; } }
+
+  var sel = suggested();
+  var m = /^#day-([1-9])$/.exec(location.hash);
+  if (m){ sel = +m[1]; try{ history.replaceState(null, "", location.pathname + location.search); }catch(e){} }
+
+  /* the nine day buttons, built once so focus stays put */
+  var chips = [];
+  for (var i = 1; i <= 9; i++){
+    var li = document.createElement("li"), b = document.createElement("button");
+    b.type = "button"; b.textContent = i;
+    (function(k){ b.addEventListener("click", function(){
+      var reading = $("prayer").getBoundingClientRect().top < 140;
+      choose(k);
+      if (reading) $("prayer").scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+    }); })(i);
+    li.appendChild(b); $("track").appendChild(li); chips.push(b);
+  }
+
+  var unarm = null;
+  function render(){
+    if (unarm){ clearTimeout(unarm); unarm = null; }
+    var d = DAYS[sel-1], done = isDone(sel), n = dayFromStart(), count = state.done.length, st;
+    $("tNum").firstChild.nodeValue = sel;
+    $("tTitle").textContent = d.title;
+    $("dCap").innerHTML = "<b>DAY " + sel + "</b> · " + d.title.replace(/[&<>]/g, "") + (done ? " · prayed" : (sel === n ? " · today" : ""));
+    if (count === 9) st = "All nine days prayed. Thanks be to God.";
+    else if (n !== null && n > 9) st = "Your nine days have passed. Finish any day you missed, or reset to begin again.";
+    else if (n !== null && n < 1) st = "Your novena begins on " + fmt(state.start) + ".";
+    else if (n !== null && sel === n && !done && firstOpen() < n) st = "Today is Day " + n + ". Pray it today, or catch up on Day " + firstOpen() + " first. Either is fine.";
+    else if (n !== null && sel === n) st = (done ? "Today’s prayer is done. " : "Today is Day " + n + ". ") + count + " of 9 days prayed.";
+    else st = (done ? "Prayed. " : "") + count + " of 9 days prayed." + (n === null ? " Set a start date to follow the days on the calendar." : "");
+    $("tStatus").textContent = st;
+    $("beginLabel").textContent = done ? "Pray Day " + sel + " again" : "Pray Day " + sel;
+    $("prayHeadText").textContent = "Pray Day " + sel;
+    $("prayHeadN").textContent = "DAY " + sel + " OF 9";
+    var lab = $("dIconLabel"); lab.querySelector("use").setAttribute("href", "#i-" + ICONS[sel-1]); lab.querySelector("span").textContent = "DAY " + sel;
+    $("dTitle").textContent = d.title; $("dVerse").textContent = d.verse; $("dRef").textContent = d.ref;
+    $("dRefl").textContent = d.refl; $("dPrayer").textContent = d.prayer;
+    var mb = $("markBtn"); mb.classList.toggle("is-done", done); mb.setAttribute("aria-pressed", String(done));
+    $("markLabel").textContent = done ? "Day " + sel + " prayed" : "Mark Day " + sel + " as prayed";
+    $("prevBtn").disabled = sel === 1; $("prevBtn").textContent = sel > 1 ? "‹ Day " + (sel-1) : "‹";
+    $("nextBtn").disabled = sel === 9; $("nextBtn").textContent = sel < 9 ? "Day " + (sel+1) + " ›" : "›";
+    $("startDate").value = state.start || "";
+    chips.forEach(function(c, j){
+      var k = j + 1, dn = isDone(k);
+      c.classList.toggle("done", dn); c.classList.toggle("sel", k === sel); c.classList.toggle("today", k === n);
+      c.setAttribute("aria-label", "Day " + k + ": " + DAYS[j].title + (k === n ? ", today" : "") + (dn ? ", prayed" : ""));
+      if (k === sel) c.setAttribute("aria-current", "step"); else c.removeAttribute("aria-current");
+    });
+  }
+  function choose(k){ sel = k; render(); }
+  function toast(msg){ var el = $("toast"); el.textContent = msg; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(function(){ el.classList.remove("show"); }, 2400); }
+  function goPrayer(){ $("prayer").scrollIntoView({behavior: reduce ? "auto" : "smooth"}); }
+
+  $("beginBtn").addEventListener("click", goPrayer);
+  $("homeLink").addEventListener("click", function(e){ e.preventDefault(); window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"}); });
+  $("prevBtn").addEventListener("click", function(){ if (sel > 1){ choose(sel-1); $("prayer").scrollIntoView(); } });
+  $("nextBtn").addEventListener("click", function(){ if (sel < 9){ choose(sel+1); $("prayer").scrollIntoView(); } });
+  $("markBtn").addEventListener("click", function(){
+    if (isDone(sel)){
+      if (!unarm){ $("markLabel").textContent = "Tap again to unmark Day " + sel; unarm = setTimeout(function(){ unarm = null; render(); }, 3000); return; }
+      state.done.splice(state.done.indexOf(sel), 1); save(state); render(); return;
+    }
+    state.done.push(sel); if (!state.start && sel === 1) state.start = todayISO();
+    save(state); render();
+    toast(state.done.length === 9 ? "All nine days prayed. Thanks be to God." : "Day " + sel + " prayed. God bless you.");
+  });
+  $("startDate").addEventListener("change", function(e){ state.start = e.target.value || null; save(state); sel = suggested(); render(); });
+  $("startToday").addEventListener("click", function(){ state.start = todayISO(); save(state); sel = suggested(); render(); });
+  var armT = null;
+  $("resetAll").addEventListener("click", function(){
+    var r = $("resetAll");
+    if (!armT){ r.textContent = "Tap again to clear"; armT = setTimeout(function(){ armT = null; r.textContent = "Reset"; }, 3500); return; }
+    clearTimeout(armT); armT = null; r.textContent = "Reset";
+    state.done = []; state.start = null; save(state); sel = 1; render(); toast("Progress cleared.");
+  });
+  var it = $("intention"); it.value = state.intention || "";
+  it.addEventListener("input", function(){ state.intention = it.value; save(state); });
+  window.addEventListener("hashchange", function(){ var h = /^#day-([1-9])$/.exec(location.hash); if (h) choose(+h[1]); });
+
+  /* a page left open overnight moves to the new day */
+  var lastDay = todayISO();
+  function refreshDay(){ if (todayISO() !== lastDay){ lastDay = todayISO(); sel = suggested(); render(); } }
+  document.addEventListener("visibilitychange", function(){ if (!document.hidden) refreshDay(); });
+  window.addEventListener("pageshow", refreshDay);
+  setInterval(refreshDay, 60000);
+
+  /* keep the screen awake, only where the phone and page allow it */
+  var lock = null, want = false, wb = $("wakeBtn");
+  function paintWake(){ wb.setAttribute("aria-pressed", String(want)); $("wakeLabel").textContent = want ? "Screen stays on" : "Keep screen on while praying"; }
+  function acquire(){ navigator.wakeLock.request("screen").then(function(l){ lock = l; l.addEventListener("release", function(){ lock = null; }); })
+    .catch(function(){ want = false; paintWake(); wb.hidden = true; }); }
+  var allowed = true; try{ if (document.featurePolicy) allowed = document.featurePolicy.allowsFeature("screen-wake-lock"); }catch(e){}
+  if ("wakeLock" in navigator && allowed){
+    wb.hidden = false;
+    wb.addEventListener("click", function(){ want = !want; paintWake(); if (want) acquire(); else if (lock) lock.release(); });
+    document.addEventListener("visibilitychange", function(){ if (!document.hidden && want && !lock) acquire(); });
+  }
+
+  paintTheme(); paintScale(); render();
+})();
+</script>
+</body>
+</html>
