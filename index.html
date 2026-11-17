@@ -197,6 +197,10 @@ footer{padding:10px 0 44px;text-align:center;font-size:13px;color:var(--muted)}
 .today h2{font-size:calc(25px * var(--scale))}
 .h2{font-size:calc(27px * var(--scale))}
 .step .num{letter-spacing:0}
+/* modern (lining) numerals for counters, so "1" never reads as Roman "I" */
+body{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.daynum,.track button,.step .num,.h2 .n,.dcap,.daynum small{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.cross svg{font-size:30px}
 .name .short{display:none}
 .track{gap:4px}
 .track button{aspect-ratio:auto;height:44px;max-width:none;border-radius:12px;border-color:var(--rule-strong);font-size:15px}
@@ -256,7 +260,7 @@ details.prayer{border-color:var(--rule-strong)}
 
 <main class="wrap" id="top">
   <div class="hero">
-    <div class="cross" aria-hidden="true">✝</div>
+    <div class="cross" aria-hidden="true"><svg class="i"><use href="#i-cross"/></svg></div>
     <p class="kicker">Nine days of trust in God’s providence</p>
     <h1>Novena for Relief from Debt and Financial Hardship</h1>
     <p class="sub">through the intercession of St. Joseph, St. Rita of Cascia &amp; St. Jude Thaddeus</p>
@@ -381,7 +385,7 @@ details.prayer{border-color:var(--rule-strong)}
   </section>
 
   <div class="close">
-    <div class="cross" aria-hidden="true">✝</div>
+    <div class="cross" aria-hidden="true"><svg class="i"><use href="#i-cross"/></svg></div>
     <blockquote>“Seek ye therefore first the kingdom of God, and his justice, and all these things shall be added unto you.”</blockquote>
     <span class="cite">Matthew 6:33 · Douay-Rheims</span>
     <p class="note">Quotations from the Douay-Rheims Bible; references follow the numbering of modern Catholic Bibles.</p>
